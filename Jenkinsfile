@@ -9,12 +9,6 @@ pipeline {
           }
         }
 
-        stage('second') {
-          steps {
-            echo 'second'
-          }
-        }
-
         stage('Hello') {
           steps {
             sh 'echo "Hello"'
