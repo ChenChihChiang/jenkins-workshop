@@ -15,12 +15,24 @@ pipeline {
           }
         }
 
+        stage('Hello') {
+          steps {
+            sh 'echo "Hello"'
+          }
+        }
+
       }
     }
 
     stage('third') {
       steps {
         echo 'third'
+      }
+    }
+
+    stage('Final') {
+      steps {
+        sh 'echo "final"'
       }
     }
 
