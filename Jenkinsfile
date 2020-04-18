@@ -33,6 +33,7 @@ pipeline {
     stage('Final') {
       steps {
         sh 'echo "final"'
+        sleep 3
       }
     }
 
