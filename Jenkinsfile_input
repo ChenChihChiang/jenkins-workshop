@@ -18,7 +18,7 @@ pipeline {
       }
       steps {
       	script{
-	  echo "Welcome ${platform}, nice to meet you."
+	  echo "Welcome ${PLATFORM}, nice to meet you."
 	}
       }
     }
