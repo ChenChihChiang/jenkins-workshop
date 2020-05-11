@@ -5,16 +5,16 @@ pipeline {
     stage('Hello') {
       steps {
       	script{
-	  env.PLATFORM = input message: 'https://abcde', parameters: [choice(choices: ['MAC', 'Linux', 'Windows'], description: 'OS platform', name: 'platform')]
+	  PLATFORM = input message: 'https://abcde', parameters: [choice(choices: ['MAC', 'Linux', 'Windows'], description: 'OS platform', name: 'platform')]
           sh label: '', script: 'env'
-	  echo "Hello, ${env.PLATFORM}, nice to meet you."
+	  echo "Hello, ${PLATFORM}, nice to meet you."
 	}
       }
     }
     
     stage('MAC') {
       when {
-        environment name: 'env.PLATFORM', value: 'MAC'
+        expression { PLATFORM == 'MAC' }
       }
       steps {
       	script{
