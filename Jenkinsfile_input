@@ -5,20 +5,32 @@ pipeline {
     stage('Hello') {
       steps {
       	script{
-	  PLATFORM = input message: 'https://abcde', parameters: [choice(choices: ['MAC', 'Linux', 'Windows'], description: 'OS platform', name: 'platform')]
-          sh label: '', script: 'env'
+	  PLATFORM = input message: 'https://abcde', parameters: [choice(choices: ['macOS', 'Linux', 'Windows'], description: 'OS platform', name: 'platform')]
 	  echo "Hello, ${PLATFORM}, nice to meet you."
 	}
       }
     }
     
-    stage('MAC') {
+    stage('macOS') {
       when {
-        expression { PLATFORM == 'MAC' }
+        expression { PLATFORM == 'macOS' }
       }
       steps {
       	script{
-	  echo "Welcome ${PLATFORM}, nice to meet you."
+	  VERSION = input message: 'https://abcde', parameters: [choice(choices: ['10.13', '10.14', '10.15'], description: 'OS platform', name: 'platform')]
+	  echo "Welcome ${VERSION}, nice to meet you."
+	}
+      }
+    }
+    
+     stage('Linux') {
+      when {
+        expression { PLATFORM == 'Linux' }
+      }
+      steps {
+      	script{
+	  VERSION = input message: 'https://abcde', parameters: [choice(choices: ['CentOS', 'Debian', 'Ubuntu'], description: 'OS platform', name: 'platform')]
+	  echo "Welcome ${VERSION}, nice to meet you."
 	}
       }
     }
