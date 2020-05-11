@@ -2,9 +2,7 @@ pipeline {
   agent any
   stages {
     stage('Hello') {
-      input {
-        parameters: [choice(choices: ['MAC', 'Linux', 'Windows'], description: 'OS platform', name: 'PLATFORM')]
-        }
+      input message: 'https://abcde'
       steps {
         echo "Hello, ${PLATFORM}, nice to meet you."
       }
