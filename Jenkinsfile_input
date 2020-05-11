@@ -1,15 +1,13 @@
 pipeline {
   agent any
-  parameters {
-    input message: 'https://abcde', parameters: [choice(choices: ['MAC', 'Linux', 'Windows'], description: 'OS platform', name: 'pppp')]
-  }
   
   stages {
     stage('Hello') {
       steps {
       	script{
+	  platform = input message: 'https://abcde', parameters: [choice(choices: ['MAC', 'Linux', 'Windows'], description: 'OS platform', name: 'pppp')]
           sh label: '', script: 'env'
-	  echo "Hello, ${params.pppp}, nice to meet you."
+	  echo "Hello, ${platform}, nice to meet you."
 	}
       }
     }
