@@ -4,9 +4,9 @@ pipeline {
     stage('Hello') {
       steps {
       	script{
-	  input message: 'https://abcde', parameters: [choice(choices: ['MAC', 'Linux', 'Windows'], description: 'OS platform', name: 'PLATFORM')]
+	  input message: 'https://abcde', parameters: [choice(choices: ['MAC', 'Linux', 'Windows'], description: 'OS platform', name: 'pppp')]
 	  sh label: '', script: 'env'
-	  echo "Hello, PLATFORM, nice to meet you."
+	  echo "Hello, ${params.pppp}, nice to meet you."
 	}
       }
     }
