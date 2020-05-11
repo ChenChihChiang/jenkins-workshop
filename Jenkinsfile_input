@@ -3,14 +3,11 @@ pipeline {
   stages {
     stage('Hello') {
       input {
-        message "Should we continue?"
-        ok "Yes, we should."
-        parameters {
-          string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-        }
+        parameters: [choice(choices: ['MAC', 'Linux', 'Windows'], description: 'OS platform', name: 'PLATFORM')]
+        message "Choice platform ?"
       }
       steps {
-        echo "Hello, ${PERSON}, nice to meet you."
+        echo "Hello, ${PLATFORM}, nice to meet you."
       }
     }
   }
