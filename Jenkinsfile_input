@@ -4,9 +4,9 @@ pipeline {
     stage('Hello') {
       steps {
       	script{
-	      input message: 'https://abcde', parameters: [choice(choices: ['MAC', 'Linux', 'Windows'], description: 'OS platform', name: 'PLATFORM')]
-	      echo "Hello, ${env.PLATFORM}, nice to meet you."
-		}
+	  input message: 'https://abcde', parameters: [choice(choices: ['MAC', 'Linux', 'Windows'], description: 'OS platform', name: 'PLATFORM')]
+	  echo "Hello, ${env.PLATFORM}, nice to meet you."
+	}
       }
     }
   }
