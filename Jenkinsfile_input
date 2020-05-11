@@ -6,7 +6,7 @@ pipeline {
       	script{
 	  input message: 'https://abcde', parameters: [choice(choices: ['MAC', 'Linux', 'Windows'], description: 'OS platform', name: 'PLATFORM')]
 	  sh label: '', script: 'env'
-	  echo "Hello, ${params.PLATFORM}, nice to meet you."
+	  echo "Hello, PLATFORM, nice to meet you."
 	}
       }
     }
