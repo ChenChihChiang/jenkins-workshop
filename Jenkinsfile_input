@@ -4,7 +4,7 @@ pipeline {
     stage('Hello') {
       input {
         parameters: [choice(choices: ['MAC', 'Linux', 'Windows'], description: 'OS platform', name: 'PLATFORM')]
-        message "Choice platform ?"
+        message: "Choice platform ?"
       }
       steps {
         echo "Hello, ${PLATFORM}, nice to meet you."
