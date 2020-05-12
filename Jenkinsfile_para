@@ -16,22 +16,23 @@ pipeline {
   }
   
   stages {
+    parallel {
+      stage('Parallel') {
 
-    stage('Parallel') {
-
-      stage('bash loop.sh') {
-        steps {
-          script{
-           sh (libraryResource('loop.sh'))
+        stage('bash loop.sh') {
+          steps {
+            script{
+             sh (libraryResource('loop.sh'))
+            }
           }
         }
-      }
 
-      stage('python loop.py') {
-        steps {
-          script{
-            def myscript = libraryResource('loop.py')
-            sh (myscript)
+        stage('python loop.py') {
+          steps {
+            script{
+              def myscript = libraryResource('loop.py')
+              sh (myscript)
+            }
           }
         }
       }
