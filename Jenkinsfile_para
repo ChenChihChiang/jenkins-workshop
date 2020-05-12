@@ -16,8 +16,8 @@ pipeline {
   }
   
   stages {
-    parallel {
-      stage('Parallel') {
+    stage('Parallel') {
+      parallel {
 
         stage('bash loop.sh') {
           steps {
