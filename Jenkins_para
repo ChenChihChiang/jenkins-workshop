@@ -1,15 +1,56 @@
-stage('Build & Echo AWS Region') {
-  parallel {
-    stage('Build') {
-      steps {
-        sh 'npm run build'
-      }
-    }
+@Library('jenkins-shared-library@master') _
+import groovy.json.JsonSlurper
 
-    stage('Echo AWS Region') {
-      steps {
-        echo "${env.AWS_REGION}"
+pipeline {
+  agent any
+
+  parameters {
+      string(name: 'BASH_TIMES', defaultValue: '5', description: 'BASH_TIMES', trim: true)
+      string(name: 'PYTHON_TIMES', defaultValue: '10', description: 'PYTHON_TIMES', trim: true)
+  }
+
+  environment {
+      BASH_TIMES = "${params.BASH_TIMES}"
+      PYTHON_TIMES = "${params.PYTHON_TIMES}"
+      PYTHON_JSON = libraryResource('data.json')
+  }
+  
+  stages {
+
+    stage('Parallel') {
+
+      stage('bash loop.sh') {
+        steps {
+          script{
+           sh (libraryResource('loop.sh'))
+          }
+        }
+      }
+
+      stage('python loop.py') {
+        steps {
+          script{
+            def myscript = libraryResource('loop.py')
+            sh (myscript)
+          }
+        }
       }
     }
+  }
+
+  post {
+    always {
+      echo 'I will always run...'
+    }
+    success {
+      script{
+          echo "success"
+        }
+      }
+    failure {
+      script{
+          echo "Failure"
+      }
+    }     
   }
 }
