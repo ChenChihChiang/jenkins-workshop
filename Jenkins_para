@@ -1,0 +1,15 @@
+stage('Build & Echo AWS Region') {
+  parallel {
+    stage('Build') {
+      steps {
+        sh 'npm run build'
+      }
+    }
+
+    stage('Echo AWS Region') {
+      steps {
+        echo "${env.AWS_REGION}"
+      }
+    }
+  }
+}
