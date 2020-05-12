@@ -70,15 +70,11 @@ pipeline {
     success {
       script{
           echo "success"
-          result = "SUCCESSFUL"
-          notify(result)
         }
       }
     failure {
       script{
           echo "Failure"
-          result = "FAILED"
-          notify(result)
       }
     }     
   }
