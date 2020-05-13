@@ -4,8 +4,8 @@ pipeline {
     stage('first') {
       steps {
         script {
-          sh label: 'Add Docker', script: """apk add docker"
-          sh label: 'Build Docker Image', script: """docker build -t chihchinag/test ."""
+          sh label: 'Add Docker', script: """ apk add docker """
+          sh label: 'Build Docker Image', script: """ docker build . -t chihchinag/test """
         }
       }
     }
