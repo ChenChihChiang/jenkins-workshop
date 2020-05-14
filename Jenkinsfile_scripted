@@ -16,6 +16,6 @@ node (){
     throw err
   }
   finally {
-    echo ${currentBuild.result}
+    echo currentBuild.result
   }
 }
