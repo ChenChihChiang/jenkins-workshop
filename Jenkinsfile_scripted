@@ -1,16 +1,21 @@
-pipeline {
-  agent any
-  stages {
+node (){
+  try {
     stage('first') {
       steps {
         echo 'first'
       }
     }
-
     stage('final') {
       steps {
         sh 'echo "final"'
       }
     }
+  }
+  catch (err) {
+    currentBuild.result = "FAILED"
+    throw err
+  }
+  finally {
+    notifyBuild(currentBuild.result)
   }
 }
