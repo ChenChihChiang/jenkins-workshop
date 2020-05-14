@@ -16,6 +16,6 @@ node (){
     throw err
   }
   finally {
-    notifyBuild(currentBuild.result)
+    echo ${currentBuild.result}
   }
 }
