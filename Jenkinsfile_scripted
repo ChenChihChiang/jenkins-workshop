@@ -1,14 +1,10 @@
 node (){
   try {
     stage('first') {
-      steps {
-        echo 'first'
-      }
+      echo 'first'
     }
     stage('final') {
-      steps {
-        sh 'echo "final"'
-      }
+      echo 'final'
     }
   }
   catch (err) {
