@@ -11,7 +11,4 @@ node (){
     currentBuild.result = "FAILED"
     throw err
   }
-  finally {
-    echo currentBuild.result
-  }
 }
