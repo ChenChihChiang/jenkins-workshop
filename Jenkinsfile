@@ -7,9 +7,9 @@ pipeline {
       }
     }
 
-  stage('Final') {
-    steps {
-      sh 'echo "final"'
+    stage('Final') {
+      steps {
+        sh 'echo "final"'
+      }
     }
-  }
-}
+ }
