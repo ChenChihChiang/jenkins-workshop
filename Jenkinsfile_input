@@ -5,8 +5,8 @@ pipeline {
     stage('Hello') {
       steps {
       	script{
-	  PLATFORM = input message: 'https://abcde', parameters: [choice(choices: ['macOS', 'Linux', 'Windows'], description: 'OS platform', name: 'platform')]
-	  echo "Hello, ${PLATFORM}, nice to meet you."
+	  PLATFORM = input message: 'What is your OS', parameters: [choice(choices: ['macOS', 'Linux', 'Windows'], description: 'OS platform', name: 'platform')]
+	  echo "Your OS is ${PLATFORM}."
 	}
       }
     }
@@ -17,8 +17,8 @@ pipeline {
       }
       steps {
       	script{
-	  VERSION = input message: 'https://abcde', parameters: [choice(choices: ['10.13', '10.14', '10.15'], description: 'OS platform', name: 'platform')]
-	  echo "Welcome ${VERSION}, nice to meet you."
+	  VERSION = input message: 'What is your distribution', parameters: [choice(choices: ['10.13', '10.14', '10.15'], description: 'OS platform', name: 'platform')]
+	  echo "Your OS is ${PLATFORM} and distribution is ${VERSION}."
 	}
       }
     }
@@ -29,8 +29,8 @@ pipeline {
       }
       steps {
       	script{
-	  VERSION = input message: 'https://abcde', parameters: [choice(choices: ['CentOS', 'Debian', 'Ubuntu'], description: 'OS platform', name: 'platform')]
-	  echo "Welcome ${VERSION}, nice to meet you."
+	  VERSION = input message: 'What is your distribution', parameters: [choice(choices: ['CentOS', 'Debian', 'Ubuntu'], description: 'OS platform', name: 'platform')]
+	  echo "Your OS is ${PLATFORM} and distribution is ${VERSION}."
 	}
       }
     }
@@ -41,8 +41,8 @@ pipeline {
       }
       steps {
       	script{
-	  VERSION = input message: 'https://abcde', parameters: [choice(choices: ['XP', '7', '10'], description: 'OS platform', name: 'platform')]
-	  echo "Welcome ${VERSION}, nice to meet you."
+	  VERSION = input message: 'What is your distribution', parameters: [choice(choices: ['XP', '7', '10'], description: 'OS platform', name: 'platform')]
+	  echo "Your OS is ${PLATFORM} and distribution is ${VERSION}."
 	}
       }
     }
