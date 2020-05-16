@@ -13,4 +13,20 @@ pipeline {
       }
     }
   }
+  
+  post {
+    always {
+      echo 'I will always run...'
+    }
+    success {
+      script{
+          echo "success"
+        }
+      }
+    failure {
+      script{
+          echo "Failure"
+      }
+    }     
+  }
 }
