@@ -46,6 +46,14 @@ pipeline {
 	}
       }
     }
+    stage('Deploy') {
+      steps {
+      	script{
+	  input message: "Are you ready to deploy service on ${PLATFORM} ${VERSION}？")]
+	  echo "Deploy Successfully"
+	}
+      }
+    }
   }
   
   post {
