@@ -40,6 +40,7 @@ pipeline {
         script{
           def load_json = new JsonSlurper().parseText(PYTHON_JSON)
           echo "${load_json}"
+	  echo "${load_json.host1}
         }
       }
     }
