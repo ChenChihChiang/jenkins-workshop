@@ -31,7 +31,7 @@ pipeline {
         script{
           def data = libraryResource('data.json')
           echo data
-	  echo "Topic is ${data.topic}"
+	  println data.getClass() 
         }
       }
     }
