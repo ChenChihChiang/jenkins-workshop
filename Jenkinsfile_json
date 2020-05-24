@@ -40,9 +40,9 @@ pipeline {
         script{
           def load_json = new JsonSlurper().parseText(PYTHON_JSON)
           echo "${load_json}"
-	  echo "Topic is ${load_json.host1}"
+	  echo "Topic is ${load_json.topic}"
 	  echo "HOST is ${load_json.host1}"
-	  echo "Today is ${load_json.host1}"
+	  echo "Today is ${load_json.date}"
         }
       }
     }
