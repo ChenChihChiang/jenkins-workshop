@@ -21,7 +21,7 @@ pipeline {
     stage('echo yaml') {
       steps {
         script{
-	  yfile = readYaml (text: libraryResource(YAMLFILE))
+	  yfile = readYaml (text: libraryResource("${YAMLFILE}"))
           echo yfile.toString()
 	  echo "image = ${yfile.spec.containers.name}"
         }
