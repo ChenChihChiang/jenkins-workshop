@@ -26,7 +26,7 @@ pipeline {
 	  println yfile.getClass()
 	  echo "image = ${yfile.spec.containers.name}"
 	  println yfile.spec.containers.name.getClass()
-	  echo "image = ${yfile.spec.containers.name.[0]}"
+	  echo "image = ${yfile.spec.containers.name}.[0]"
         }
       }
     }
@@ -48,6 +48,7 @@ pipeline {
           echo "${load_json}"
 	  echo "Topic is ${load_json.topic}"
 	  echo "HOST is ${load_json.host1}"
+	  echo "HOST is ${load_json.host2}"
 	  echo "Today is ${load_json.date}"
         }
       }
