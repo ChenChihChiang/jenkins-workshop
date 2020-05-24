@@ -23,6 +23,7 @@ pipeline {
 	  yfile = readYaml (text: libraryResource('pod.yaml'))
           echo yfile.toString()
 	  echo "image = ${yfile.spec.containers.image}"
+	  echo "image = ${yfile.spec.containers.[1].image}"
         }
       }
     }
