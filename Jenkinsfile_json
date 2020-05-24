@@ -22,8 +22,8 @@ pipeline {
       steps {
         script{
 	  yfile = readYaml (text: YAMLFILE)
-	  //yfile = readYaml (text: libraryResource('pod.yaml'))
           echo yfile.toString()
+	  println yfile.getClass()
 	  echo "image = ${yfile.spec.containers.name}"
         }
       }
