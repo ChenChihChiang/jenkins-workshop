@@ -22,6 +22,7 @@ pipeline {
         script{
 	  yfile = readYaml (text: libraryResource('pod.yaml'))
           echo yfile.toString()
+	  echo yfile.getClass()
         }
       }
     }
@@ -31,7 +32,7 @@ pipeline {
         script{
           def data = libraryResource('data.json')
           echo data
-	  echo type(data)
+	  echo data.getClass()
         }
       }
     }
