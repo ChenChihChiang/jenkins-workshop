@@ -31,6 +31,7 @@ pipeline {
         script{
           def data = libraryResource('data.json')
           echo data
+	  echo type(data)
         }
       }
     }
