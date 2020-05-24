@@ -22,7 +22,6 @@ pipeline {
         script{
 	  yfile = readYaml (text: libraryResource('pod.yaml'))
           echo yfile.toString()
-	  echo yfile.getClass()
         }
       }
     }
