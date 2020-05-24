@@ -25,6 +25,7 @@ pipeline {
           echo yfile.toString()
 	  println yfile.getClass()
 	  echo "image = ${yfile.spec.containers.name}"
+	  echo "image = ${yfile.spec.containers.name}"
         }
       }
     }
