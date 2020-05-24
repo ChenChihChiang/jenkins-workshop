@@ -32,7 +32,7 @@ pipeline {
         script{
           def data = libraryResource('data.json')
           echo data
-	  println data.getClass() 
+	  echo data.getClass() 
         }
       }
     }
