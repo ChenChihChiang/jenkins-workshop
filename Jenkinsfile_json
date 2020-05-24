@@ -30,7 +30,7 @@ pipeline {
       steps {
         script{
           def data = libraryResource('data.json')
-          echo data
+          println data
 	  println data.getClass() 
         }
       }
