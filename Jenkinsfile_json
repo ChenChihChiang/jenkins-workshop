@@ -13,7 +13,6 @@ pipeline {
       BASH_TIMES = "${params.BASH_TIMES}"
       PYTHON_TIMES = "${params.PYTHON_TIMES}"
       PYTHON_JSON = libraryResource('data.json')
-      YAMLFILE = libraryResource('pod.yaml')
   }
 	
   stages {
@@ -21,7 +20,7 @@ pipeline {
     stage('echo yaml') {
       steps {
         script{
-	  yfile = readYaml (text: libraryResource("${YAMLFILE}"))
+	  yfile = readYaml (text: libraryResource('pod.yaml')
           echo yfile.toString()
 	  echo "image = ${yfile.spec.containers.name}"
         }
