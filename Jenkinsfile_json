@@ -22,7 +22,7 @@ pipeline {
         script{
 	  yfile = readYaml (text: libraryResource('pod.yaml'))
           echo yfile.toString()
-	  echo "${yfile.spec.containers.image}"
+	  echo "image = ${yfile.spec.containers.image}"
         }
       }
     }
@@ -32,7 +32,7 @@ pipeline {
         script{
           def data = libraryResource('data.json')
           echo data
-	  echo data.getClass() 
+	  println data.getClass() 
         }
       }
     }
