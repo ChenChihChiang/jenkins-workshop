@@ -12,9 +12,19 @@ pipeline {
 		echo "${util.getVersion(env.BUILD_NUMBER,env.GIT_COMMIT)}"
 		echo "${util.showhost()}"
 		echo "${util.showcommitid()}"
-       }
+	}
       }
     }
+	  
+    stage('common') {
+      steps {
+        script{
+          def util1 = new org.foo.utils1()
+		echo "${util1.getGitCommitId()}"
+	}
+      }
+    }
+	  
   }
 
   post {
