@@ -20,7 +20,7 @@ pipeline {
       steps {
         script{
           def util1 = new org.foo.utils1()
-		echo "${util1.getGitCommitId()}"
+		echo "${util1.commitHash()}"
 	}
       }
     }
