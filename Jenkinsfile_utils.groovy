@@ -11,7 +11,6 @@ pipeline {
           def util = new org.foo.utils()
 		echo "${util.getVersion(env.BUILD_NUMBER,env.GIT_COMMIT)}"
 		echo "${util.showhost()}"
-		//echo "${util.showcommitid()}"
 	}
       }
     }
