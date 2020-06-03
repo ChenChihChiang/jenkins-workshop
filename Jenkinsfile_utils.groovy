@@ -8,7 +8,7 @@ pipeline {
     stage('common') {
       steps {
         script{
-          def util = new org.foo.bar()
+          def util = new org.foo.utils()
 		echo "${util.getVersion(env.BUILD_NUMBER,env.GIT_COMMIT)}"
 		echo "${util.showhost()}"
 		echo "${util.showcommitid()}"
