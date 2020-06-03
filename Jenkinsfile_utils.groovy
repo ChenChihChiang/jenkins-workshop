@@ -9,8 +9,9 @@ pipeline {
       steps {
         script{
           def util = new org.foo.bar()
-          echo "${util.getVersion(env.BUILD_NUMBER,env.GIT_COMMIT)}"
-          echo "${util.showhost()}"
+		echo "${util.getVersion(env.BUILD_NUMBER,env.GIT_COMMIT)}"
+		echo "${util.showhost()}"
+		echo "${util.getGitCommitId()}"
        }
       }
     }
