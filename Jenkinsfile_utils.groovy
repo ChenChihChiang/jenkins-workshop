@@ -16,7 +16,7 @@ pipeline {
       }
     }
 	  
-    stage('common') {
+    stage('common1') {
       steps {
         script{
           def util1 = new org.foo.utils1()
